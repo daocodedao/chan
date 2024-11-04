@@ -1,3 +1,9 @@
+
+
+# import 路径修改
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+
 from Chan import CChan
 from ChanConfig import CChanConfig
 from Common.CEnum import AUTYPE, DATA_SRC, KL_TYPE
@@ -5,11 +11,11 @@ from Plot.AnimatePlotDriver import CAnimateDriver
 from Plot.PlotDriver import CPlotDriver
 
 if __name__ == "__main__":
-    code = "sz.000001"
-    begin_time = "2018-01-01"
+    code = "binance_btcusdt"
+    begin_time = "2024-10-31"
     end_time = None
-    data_src = DATA_SRC.BAO_STOCK
-    lv_list = [KL_TYPE.K_DAY]
+    data_src = DATA_SRC.CSV
+    lv_list = [KL_TYPE.K_5M]
 
     config = CChanConfig({
         "bi_strict": True,
@@ -81,7 +87,7 @@ if __name__ == "__main__":
         )
         # plot_driver.figure.switch_backend(‘agg’)
         plot_driver.figure.show()
-        # plot_driver.figure.savefig('myplot.png')
+        plot_driver.figure.savefig('myplot.png')
 
     else:
         CAnimateDriver(

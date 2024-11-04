@@ -4,3 +4,5 @@ matplotlib>=3.5.3
 numpy>=1.23.3
 pandas>=1.4.2
 requests>=2.22.0
+backtrader==1.9.78.123
+python-binance
